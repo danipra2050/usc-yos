@@ -1,0 +1,43 @@
+.ion-header {
+    background-color: #D33333;
+}
+
+.ion-toolbar {
+
+    --border-style: none;
+    --background: #D33333;
+    --color: white;
+    --min-height: 8rem;
+
+    /*--stripe: #645fd1;*/
+    --stripe: #D33333;
+    --bg: #D33333;
+    --background: transparent;
+    background: linear-gradient(135deg, var(--bg) 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, var(--bg) 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, var(--bg) 25%, transparent 25%),
+    linear-gradient(45deg, var(--bg) 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: var(--stripe);
+}
+.ion-button {
+    --background: #D33333;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+.ion-button:hover{
+    --background: #D33333;
+}
+
+.ion-content {
+    --background: #D33333;
+    overflow: hidden;
+}
+
+.ion-card-subtitle {
+
+    padding-left: 1.2rem;
+    margin-top: 1.9rem;
+    padding-bottom: 0.3rem;
+    --color: white;
+}

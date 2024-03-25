@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Login from './components/Login';
+import SingUp from './pages/SingUp';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -24,14 +25,17 @@ import './theme/variables.css';
 
 setupIonicReact();
 
-const App: React.FC = () => (
+const App = () => (
   <Router>
       <Switch>
         <Route path="/" exact>
-          <h1>Welcome to the home page!</h1>
+          <Login />
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/singup">
+          <SingUp />
         </Route>
       </Switch>
     </Router>

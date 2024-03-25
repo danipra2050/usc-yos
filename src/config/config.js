@@ -5,3 +5,5 @@ const config = {
     appCollectionId: String(import.meta.env.YOS_APPWRITE_COLLECTION_ID),
     appBucketId: String(import.meta.env.YOS_APPWRITE_BUCKET_ID),
 }
+
+export default config;

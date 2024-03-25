@@ -5,7 +5,7 @@ import {
 import { Redirect } from 'react-router-dom';
 import './Login.css';
 
-const Login: React.FC = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -37,7 +37,7 @@ const Login: React.FC = () => {
             </IonButton>
           </IonItem>
           <IonItem className="form-item">
-            <IonButton expand="block" routerLink="/signup">
+            <IonButton expand="block" routerLink="/singup">
               No tienes cuenta? Crear una cuenta
             </IonButton>
           </IonItem>
