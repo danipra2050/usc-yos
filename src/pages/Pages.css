@@ -1,5 +1,6 @@
-.ion-header {
+.icon-header {
     background-color: #D33333;
+    border-radius: 0 0 20px 20px;
 }
 
 .ion-toolbar {
@@ -19,14 +20,7 @@
     linear-gradient(45deg, var(--bg) 25%, transparent 25%);
     background-size: 100px 100px;
     background-color: var(--stripe);
-}
-.ion-button {
-    --background: #D33333;
-    font-size: 1.2rem;
-    font-weight: 800;
-}
-.ion-button:hover{
-    --background: #D33333;
+    border-radius: 0 0 20px 20px;
 }
 
 .ion-content {
@@ -40,4 +34,18 @@
     margin-top: 1.9rem;
     padding-bottom: 0.3rem;
     --color: white;
+}
+
+.content{
+    --background: #E8E8E8;
+}
+
+.ion-footer{
+    background: #D33333;
+}
+
+.title-screen{
+    padding: 0 10px 0 20px;
+    font-size: 1.6em;
+    font-weight: 800;
 }

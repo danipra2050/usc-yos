@@ -1,0 +1,25 @@
+.ion-button {
+    --background: #D33333;
+    font-size: 1.2rem;
+    font-weight: 800;
+    --border-radius: 20px;
+}
+
+.ion-button:hover{
+    --background: #D33333;
+}
+
+.form-item{
+    border-radius: 20px;
+    --border-style: none;
+}
+
+.form-item-checkbox{
+    --background: #E8E8E8;
+    border-radius: 20px;
+    --border-style: none;
+}
+
+.form-list{
+    border-radius: 20px;
+}
