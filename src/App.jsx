@@ -22,6 +22,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import ShoppingList from './pages/ShoppingList';
 
 setupIonicReact();
 
@@ -36,6 +37,9 @@ const App = () => (
         </Route>
         <Route path="/singup">
           <SingUp />
+        </Route>
+        <Route path="/lista">
+          <ShoppingList />
         </Route>
       </Switch>
     </Router>
