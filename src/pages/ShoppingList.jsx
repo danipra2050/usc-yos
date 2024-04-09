@@ -8,12 +8,13 @@ import {
   IonPage,
   IonToolbar,
   IonContent,
+  IonList,
 } from "@ionic/react";
 import { chevronBack } from "ionicons/icons";
 import "./Pages.css";
-import SingUpComp from "../components/SingUpComp";
 
 const ShoppingList = () => {
+
   return (
     <IonPage>
       <IonHeader className="icon-header">
@@ -32,7 +33,9 @@ const ShoppingList = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen className="content">
-        
+        <IonList>
+
+        </IonList>
       </IonContent>
       <IonFooter className="ion-footer">&nbsp;</IonFooter>
     </IonPage>

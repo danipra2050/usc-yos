@@ -9,6 +9,8 @@ import {
   IonCheckbox,
 } from "@ionic/react";
 import { useForm } from "react-hook-form";
+import authService from "../appwrite/auth";
+import { useHistory } from 'react-router-dom';
 import "./SingUpComp.css";
 
 let initialValues = {
@@ -17,11 +19,12 @@ let initialValues = {
   tipoDocumento: "",
   documento: "",
   password: "",
-  terminos: "",
+  terminos: 0
 };
 
 const SingUpComp = () => {
-  const [data, setData] = useState();
+  const history = useHistory();
+  const [data, setData] = useState(initialValues);
 
   const {
     control,
@@ -35,9 +38,19 @@ const SingUpComp = () => {
     reValidateMode: "onChange",
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-    setData(data);
+  const onSubmit = async (data) => {
+    try {
+      const formData = {
+        email: data.correo, password: data.password, name: data.nombreCompleto
+      }
+      const userData = authService.createAccount(formData);
+      console.log(userData);
+      if(userData){
+        history.push("/");
+      }
+    } catch (error) {
+      
+    }
   };
 
   const showError = (fieldName) => {
@@ -96,7 +109,10 @@ const SingUpComp = () => {
           <IonInput
             placeholder="Password"
             type="password"
-            {...register("password", { required: true })}
+            {...register("password", { 
+              required: true,  
+              minLength: { value: 8, message: "Debe tener una longitud minima de 8 caracteres." } 
+            })}
           ></IonInput>
         </IonItem>
         {showError("password")}
@@ -104,7 +120,10 @@ const SingUpComp = () => {
           <IonInput
             placeholder="Repite Password"
             type="password"
-            {...register("secondPassword", { required: true })}
+            {...register("secondPassword", { 
+              required: true,
+              minLength: { value: 8, message: "Debe tener una longitud minima de 8 caracteres." } 
+            })}
           />
         </IonItem>
         {showError("secondPassword")}
