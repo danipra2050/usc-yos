@@ -10,10 +10,24 @@ import {
   IonContent,
   IonList,
 } from "@ionic/react";
-import { chevronBack } from "ionicons/icons";
+import { chevronBack, logOutOutline } from "ionicons/icons";
+import authService from "../appwrite/auth";
+import { Redirect, useHistory } from "react-router-dom";
 import "./Pages.css";
+import ShoppingListComp from "../components/ShoppingListComp";
 
-const ShoppingList = () => {
+const ShoppingList = ({isLoggedIn, setIsLoggedIn}) => {
+  if (!isLoggedIn) {
+    return <Redirect to="/" />;
+  }
+
+  const history = useHistory();
+
+  const handleLogout = async() => {
+    await authService.logout();
+    setIsLoggedIn(false);
+    history.push("/");
+  }
 
   return (
     <IonPage>
@@ -33,11 +47,18 @@ const ShoppingList = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen className="content">
-        <IonList>
-
-        </IonList>
+        <ShoppingListComp />
       </IonContent>
-      <IonFooter className="ion-footer">&nbsp;</IonFooter>
+      <IonFooter className="ion-footer">
+        <IonButton
+          shape="round"
+          expand="block"
+          color="danger"
+          onClick={handleLogout}
+        >
+          Logout <IonIcon icon={logOutOutline} />
+        </IonButton>
+      </IonFooter>
     </IonPage>
   );
 };

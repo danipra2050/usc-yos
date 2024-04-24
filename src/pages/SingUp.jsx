@@ -14,20 +14,12 @@ import {
 import { chevronBack } from "ionicons/icons";
 import "./Pages.css";
 import SingUpComp from "../components/SingUpComp";
+import Menu from "../components/Menu";
 
 const SingUp = () => {
   return (
     <>
-      <IonMenu side="end" contentId="registra-usuario">
-        <IonHeader>
-            <IonToolbar>
-                <IonTitle>YOS Menú</IonTitle>
-            </IonToolbar>
-        </IonHeader>
-        <IonContent className="ion-padding">
-            Contenido del menu
-        </IonContent>
-      </IonMenu>
+      <Menu contentId="registra-usuario"/>
       <IonPage id="registra-usuario">
         <IonHeader className="icon-header">
           <IonToolbar className="ion-toolbar">

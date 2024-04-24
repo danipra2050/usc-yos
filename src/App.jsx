@@ -23,14 +23,19 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import ShoppingList from './pages/ShoppingList';
+import { useState } from 'react';
 
 setupIonicReact();
 
-const App = () => (
+const App = () => {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return(
   <Router>
       <Switch>
         <Route path="/" exact>
-          <Login />
+          <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         </Route>
         <Route path="/login">
           <Login />
@@ -38,11 +43,12 @@ const App = () => (
         <Route path="/singup">
           <SingUp />
         </Route>
-        <Route path="/lista">
-          <ShoppingList />
+        <Route path="/list">
+          <ShoppingList isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         </Route>
       </Switch>
     </Router>
-);
+  );
+};
 
 export default App;

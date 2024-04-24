@@ -11,7 +11,7 @@ import {
 import { useForm } from "react-hook-form";
 import authService from "../appwrite/auth";
 import { useHistory } from 'react-router-dom';
-import "./SingUpComp.css";
+import "./css/SingUpComp.css";
 
 let initialValues = {
   correo: "",
@@ -44,6 +44,7 @@ const SingUpComp = () => {
         email: data.correo, password: data.password, name: data.nombreCompleto
       }
       const userData = authService.createAccount(formData);
+      setData(data);
       console.log(userData);
       if(userData){
         history.push("/");
